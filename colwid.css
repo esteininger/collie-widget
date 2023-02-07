@@ -9,34 +9,34 @@
     margin: 0;
     padding: 8px 12px;
 }
-#colwid_button > .left_0402{
+#colwid_button > .left_pfx{
     align-items: center;
     justify-content: space-between;
     display: flex;
     width: 70px;
 }
-#colwid_button > .left_0402 > .mg_0402{
+#colwid_button > .left_pfx > .mg_pfx{
     color: #8c909c;
 }   
-#colwid_button > .left_0402 > .sc_0402{
+#colwid_button > .left_pfx > .sc_pfx{
     color: #FFF;
     font-size: 0.875rem;
     line-height: 1.4286;
 }
-#colwid_button > .right_0402{
+#colwid_button > .right_pfx{
     align-items: center;
     justify-content: space-between;
     display: flex;
     margin-left: 20px;
 }
-#colwid_button > .right_0402 > .badge_0402{
+#colwid_button > .right_pfx > .badge_pfx{
     background-color: #3b3d45;
     border-radius: 4px;
     color: #FFF;    
     font-size: 90%;
     padding: 4px 8px 4px 8px;
 }
-#colwid_button > .right_0402 > .badge_0402:last-child{
+#colwid_button > .right_pfx > .badge_pfx:last-child{
     margin-left: 5px;
 }
 
@@ -45,8 +45,8 @@
     font-size: 80%;
 }
 
-.colwid_focus{
-    border: 1px solid #3b3d45;
+.colwid_link:focus, .colwid_focus{
+    border: 1px solid #666 !important;
     box-shadow: 0px 0px 0px 3px rgba(89,144,255,1);
 }
 
@@ -67,7 +67,7 @@
 #colwid_modal *{
     box-sizing: border-box;
 }
-#colwid_modal > .wrap_0402{
+#colwid_modal > .wrap_pfx{
     align-items: flex-start;
     display: flex;
     height: 100vh;
@@ -75,7 +75,7 @@
     padding-top: 20vh;
     width: 100vw;
 }
-#colwid_modal > .wrap_0402 > .content_0402{
+#colwid_modal > .wrap_pfx > .content_pfx{
     align-items: stretch;
     background-color: #FFF;
     border-radius: 6px;
@@ -90,16 +90,42 @@
     padding: 0;
     width: 100%;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .bottom_0402{   
+#colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx{   
     box-shadow: 0 0 0 1px #656a7633;
     height: 52px;
+    padding: 0 20px 0 20px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .middle_0402{    
+#colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div:first-child{
+    align-items: center;
+    display: flex;   
+    height: inherit;
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div:first-child span:nth-child(even){
+    font-size: 0.8125rem; 
+    padding: 0 8px 0 8px;
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div:first-child span:nth-child(odd){
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    display: inline-flex;
+    background-color: #f1f2f3;
+    color: #3b3d45;
+    font-size: 0.8125rem; 
+    line-height: 1.23077;
+    min-height: 1.25rem;
+    padding: 1px 5px;    
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div:first-child span:nth-child(odd) svg{
+    height: 12px;
+    width: 12px;
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .middle_pfx{    
     overflow-x: hidden;
     overflow-y: scroll;
     flex-grow: 1;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402{    
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx{    
     align-items: center;
     border-bottom: 1px solid #656a7633;
     display: flex;
@@ -107,11 +133,11 @@
     height: 56px;
     padding: 0 12px 0 12px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .badges_0402{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .badges_pfx{
     align-items: center;
     display: flex;    
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .badges_0402 > span{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .badges_pfx > span{
     border: 1px solid #3b3d45;
     border-radius: 4px;
     color: #3b3d45;
@@ -120,28 +146,51 @@
     line-height: 18px;
     padding: 0 5px 0 5px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .badges_0402 > span:last-child{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .badges_pfx > span:last-child{
     font-weight: 600;
     margin-left: 5px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .ico_0402{
-    
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .category_pfx{
+    align-items: center;
+    border: 1px solid #3b3d4566;
+    border-radius: 50px;    
+    display: none;
+    height: 25px;
+    margin-left: 10px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .input_0402{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .category_pfx > span{
+    color: #3b3d45;
+    font-size: 0.8125rem;
+    padding: 0 8px 0 4px;
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .category_pfx > button{ 
+    align-items: center;
+    background-color: transparent;    
+    border: none;
+    cursor: pointer;
+    display: flex;    
+    padding: 0 2px 0 8px;
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .category_pfx > button > *{
+    height: 12px;
+    width: 12px;   
+}
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .input_pfx{
     align-items: stretch;
+    border: 1px solid #FFF;
     border-radius: 4px;
     display: flex;
     flex-grow: 1;
     height: 32px;
-    margin: 0 15px 0 15px;
+    margin: 0 10px 0 10px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .input_0402 > button{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .input_pfx > button{
     align-items: center;
     background-color: transparent;
     border: none;
     display: none;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .input_0402 > input{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .input_pfx > input{
     border: none;
     border-radius: 4px;
     flex-grow: 1;
@@ -151,7 +200,7 @@
     height: 100%;
     padding-left: 5px;
 }
-#colwid_modal > .wrap_0402 > .content_0402 > .top_0402 > .input_0402 > input:focus{
+#colwid_modal > .wrap_pfx > .content_pfx > .top_pfx > .input_pfx > input:focus{
     outline: none;
 }
 
@@ -159,18 +208,18 @@
     #colwid_button{ 
         padding: 8px 10px;
     }
-    #colwid_button > .left_0402 > .sc_0402, #colwid_button > .right_0402{
+    #colwid_button > .left_pfx > .sc_pfx, #colwid_button > .right_pfx{
         display: none;
     }
-    #colwid_button > .left_0402{
+    #colwid_button > .left_pfx{
         width: 16px;
     }
-    #colwid_button > .left_0402 > .mg_0402{
+    #colwid_button > .left_pfx > .mg_pfx{
         color: #FFF;
     }
 }
 @media all and (max-width: 820px) { 
-    #colwid_modal > .wrap_0402 > .content_0402{
+    #colwid_modal > .wrap_pfx > .content_pfx{
         border-radius: 0px;
         max-height: none;
         max-width: none;

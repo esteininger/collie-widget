@@ -1,0 +1,5 @@
+{
+    "category_allowed": { "category": "Category", "docs": "Documents" },
+    "category_default": null,
+    "category_send_as": "category=%category%"
+}
