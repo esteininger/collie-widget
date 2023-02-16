@@ -1,0 +1,189 @@
+<!--[button]-->
+<button id="colwid_button">
+    <div class="left_pfx">
+        <span class="mg_pfx">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    d="M7.25 2a5.25 5.25 0 103.144 9.455l2.326 2.325a.75.75 0 101.06-1.06l-2.325-2.326A5.25 5.25 0 007.25 2zM3.5 7.25a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0z"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+        </span>
+        <span class="sc_pfx">Search</span>
+    </div>
+    <div class="right_pfx">
+        <span class="badge_pfx">
+            <svg width="41" height="11" viewBox="0 0 41 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.125 2.063V3h2.25v-.938a2.062 2.062 0 112.063 2.063H7.5v2.25h.938a2.062 2.062 0 11-2.063 2.063V7.5h-2.25v.938a2.062 2.062 0 11-2.063-2.063H3v-2.25h-.938a2.062 2.062 0 112.063-2.063zm-2.063-.938a.937.937 0 100 1.875H3v-.938a.937.937 0 00-.938-.937zM7.5 7.5v.938a.937.937 0 10.938-.938H7.5zM6.375 6.375v-2.25h-2.25v2.25h2.25zM2.062 7.5H3v.938a.937.937 0 11-.938-.938zM7.5 3h.938a.937.937 0 10-.938-.938V3z"
+                    fill="#fff"
+                ></path>
+                <path
+                    d="M15.09 10.5L18.085 0h-1.097L14 10.5h1.09zm11.297-5.192c-.183-1.445-1.263-2.534-3.05-2.534C21.264 2.774 20 4.247 20 6.61c0 2.41 1.27 3.89 3.344 3.89 1.76 0 2.86-1.034 3.043-2.5H25.02c-.184.808-.792 1.247-1.682 1.247-1.172 0-1.898-.994-1.898-2.637 0-1.61.72-2.583 1.898-2.583.942 0 1.518.555 1.681 1.281h1.368zM28.6 1.041v1.897h-1.133v1.178H28.6v4.281c0 1.432.622 2.007 2.186 2.007.275 0 .537-.034.766-.075V9.158c-.196.02-.32.034-.537.034-.7 0-1.008-.35-1.008-1.15V4.115h1.545V2.938h-1.545V1.041H28.6zm4.607 9.315h1.407V5.911c0-1.048.752-1.767 1.819-1.767.249 0 .667.048.785.082V2.842a3.372 3.372 0 00-.628-.054c-.93 0-1.721.527-1.924 1.26h-.105v-1.13h-1.354v7.438zm5.431 0h1.407V0h-1.407v10.356z"
+                    fill="#fff"
+                ></path>
+            </svg>
+        </span>
+        <span class="badge_pfx">K</span>
+    </div>
+</button>
+
+<!--[modal]-->
+<div id="colwid_modal">
+    <div class="wrap_pfx">
+        <div class="content_pfx">
+            <div class="top_pfx">
+                <div class="ico_pfx">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            d="M10.5 2a8.5 8.5 0 105.457 15.017l4.763 4.763a.75.75 0 101.06-1.06l-4.763-4.763A8.5 8.5 0 0010.5 2zm-7 8.5a7 7 0 1114 0 7 7 0 01-14 0z"
+                            clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                </div>
+                <div class="category_pfx" id="colwid_category">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true" class="tag_removeIcon__oBiUC">
+                            <path
+                                fill="currentColor"
+                                d="M12.78 4.28a.75.75 0 00-1.06-1.06L8 6.94 4.28 3.22a.75.75 0 00-1.06 1.06L6.94 8l-3.72 3.72a.75.75 0 101.06 1.06L8 9.06l3.72 3.72a.75.75 0 101.06-1.06L9.06 8l3.72-3.72z"
+                            ></path>
+                        </svg>
+                    </button>
+                    <span></span>
+                </div>
+                <div class="input_pfx">
+                    <input type="text" id="colwid_input" placeholder="Search for ..." autocomplete="off" />
+                    <span class="loader" id="colwid_loader">
+                        <svg
+                            version="1.1"
+                            id="L9"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 100 100"
+                            enable-background="new 0 0 0 0"
+                            xml:space="preserve"
+                        >
+                            <path fill="#000" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                                <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+                            </path>
+                        </svg>
+                    </span>
+                    <button class="colwid_link" id="colwid_back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                fill="currentColor"
+                                d="M18.78 6.28a.75.75 0 00-1.06-1.06L12 10.94 6.28 5.22a.75.75 0 00-1.06 1.06L10.94 12l-5.72 5.72a.75.75 0 101.06 1.06L12 13.06l5.72 5.72a.75.75 0 101.06-1.06L13.06 12l5.72-5.72z"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="badges_pfx">
+                    <span>
+                        <svg width="41" height="11" viewBox="0 0 41 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M4.125 2.063V3h2.25v-.938a2.062 2.062 0 112.063 2.063H7.5v2.25h.938a2.062 2.062 0 11-2.063 2.063V7.5h-2.25v.938a2.062 2.062 0 11-2.063-2.063H3v-2.25h-.938a2.062 2.062 0 112.063-2.063zm-2.063-.938a.937.937 0 100 1.875H3v-.938a.937.937 0 00-.938-.937zM7.5 7.5v.938a.937.937 0 10.938-.938H7.5zM6.375 6.375v-2.25h-2.25v2.25h2.25zM2.062 7.5H3v.938a.937.937 0 11-.938-.938zM7.5 3h.938a.937.937 0 10-.938-.938V3z"
+                                fill="currentColor"
+                            ></path>
+                            <path
+                                d="M15.09 10.5L18.085 0h-1.097L14 10.5h1.09zm11.297-5.192c-.183-1.445-1.263-2.534-3.05-2.534C21.264 2.774 20 4.247 20 6.61c0 2.41 1.27 3.89 3.344 3.89 1.76 0 2.86-1.034 3.043-2.5H25.02c-.184.808-.792 1.247-1.682 1.247-1.172 0-1.898-.994-1.898-2.637 0-1.61.72-2.583 1.898-2.583.942 0 1.518.555 1.681 1.281h1.368zM28.6 1.041v1.897h-1.133v1.178H28.6v4.281c0 1.432.622 2.007 2.186 2.007.275 0 .537-.034.766-.075V9.158c-.196.02-.32.034-.537.034-.7 0-1.008-.35-1.008-1.15V4.115h1.545V2.938h-1.545V1.041H28.6zm4.607 9.315h1.407V5.911c0-1.048.752-1.767 1.819-1.767.249 0 .667.048.785.082V2.842a3.372 3.372 0 00-.628-.054c-.93 0-1.721.527-1.924 1.26h-.105v-1.13h-1.354v7.438zm5.431 0h1.407V0h-1.407v10.356z"
+                                fill="currentColor"
+                            ></path>
+                        </svg>
+                    </span>
+                    <span>K</span>
+                </div>
+            </div>
+            <div class="middle_pfx" id="colwid_content"></div>
+            <div class="bottom_pfx">
+                <div>
+                    <span>Tab</span>
+                    <span>to navigate,</span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                fill="currentColor"
+                                d="M13.5 2.75a.75.75 0 00-1.5 0v4.5A1.75 1.75 0 0110.25 9H4.56l2.22-2.22a.75.75 0 00-1.06-1.06l-3.5 3.5a.748.748 0 000 1.06l3.5 3.5a.75.75 0 001.06-1.06L4.56 10.5h5.69a3.25 3.25 0 003.25-3.25v-4.5z"
+                            ></path>
+                        </svg>
+                    </span>
+                    <span>to select,</span>
+                    <span>Esc</span>
+                    <span>to exit</span>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--[suggested]-->
+<a href="/docs" class="colwid_link">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+            <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M4.25 1A2.25 2.25 0 002 3.25v9.5A2.25 2.25 0 004.25 15h8.5c.69 0 1.25-.56 1.25-1.25V2.25C14 1.56 13.44 1 12.75 1h-8.5zM3.5 12.75c0 .414.336.75.75.75h8.25v-2H4.25a.75.75 0 00-.75.75v.5zm0-2.622c.235-.083.487-.128.75-.128h8.25V2.5H4.25a.75.75 0 00-.75.75v6.878z"
+                clip-rule="evenodd"
+            ></path>
+        </svg>
+    </span>
+    <span>Documentation and Guides</span>
+</a>
+<a href="/install" class="colwid_link">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+            <g fill="currentColor">
+                <path d="M8.75 1.75a.75.75 0 00-1.5 0v6.59L5.3 6.24a.75.75 0 10-1.1 1.02L7.45 10.76a.78.78 0 00.038.038.748.748 0 001.063-.037l3.25-3.5a.75.75 0 10-1.1-1.02l-1.95 2.1V1.75z"></path>
+                <path d="M1.75 9a.75.75 0 01.75.75v3c0 .414.336.75.75.75h9.5a.75.75 0 00.75-.75v-3a.75.75 0 011.5 0v3A2.25 2.25 0 0112.75 15h-9.5A2.25 2.25 0 011 12.75v-3A.75.75 0 011.75 9z"></path>
+            </g>
+        </svg>
+    </span>
+    <span>Download and Install</span>
+</a>
+<a href="/tutorials" class="colwid_link">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+            <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M8.316 2.07a.75.75 0 00-.632 0l-7 3.25a.75.75 0 000 1.36l1.434.666A.746.746 0 002 7.75V11a.75.75 0 00.158.46L2.75 11l-.592.46.001.002.001.001.003.004.008.01a1.882 1.882 0 00.103.12c.068.076.165.178.292.299.254.24.63.555 1.132.866C4.706 13.388 6.217 14 8.25 14c2.037 0 3.44-.615 4.345-1.266a5.32 5.32 0 00.977-.902 3.916 3.916 0 00.322-.448l.007-.012.003-.004v-.002h.001c0-.001 0-.002-.655-.366l.655.365A.754.754 0 0014 11V7.75a.747.747 0 00-.118-.404l1.434-.666a.75.75 0 000-1.36l-7-3.25zM12.5 7.988L8.316 9.93a.75.75 0 01-.632 0L3.5 7.988v2.723a5.585 5.585 0 00.99.776c.804.5 2.043 1.013 3.76 1.013 1.713 0 2.81-.51 3.468-.984a3.812 3.812 0 00.782-.745V7.988zM8 8.423L2.781 6 8 3.577 13.219 6 8 8.423z"
+                clip-rule="evenodd"
+            ></path>
+        </svg>
+    </span>
+    <span>Tutorials</span>
+</a>
+
+<!--[search_history]-->
+<a href="#" class="colwid_link search_history" data-searchterm="%search_term%">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+            <g fill="currentColor">
+                <path d="M1.5 1.25a.75.75 0 011.5 0v1.851A7 7 0 111 8a.75.75 0 011.5 0 5.5 5.5 0 101.725-4H5.75a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75v-3.5z"></path>
+                <path d="M8.25 4a.75.75 0 01.75.75v3.763l1.805.802a.75.75 0 01-.61 1.37l-2.25-1A.75.75 0 017.5 9V4.75A.75.75 0 018.25 4z"></path>
+            </g>
+        </svg>
+    </span>
+    <span>%search_term%</span>
+</a>
+
+<!--[result_row]-->
+<div class="result_row colwid_link" tabindex="0">
+    <div title="%file%">
+        <span>%file_entension%</span>
+        <span>%file%</span>
+    </div>
+    <div>%text%</div>
+</div>
