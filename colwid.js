@@ -21,8 +21,8 @@ class CollieWidget {
   suggested = null;
   toggling = false;
 
-  constructor(mixpeek_auth) {
-    this.button_src = document.getElementById("colwid");
+  constructor(mixpeek_auth, div_id) {
+    this.button_src = document.getElementById(div_id);
     this.config = CONFIG;
     this.config.mixpeek_auth = mixpeek_auth;
 

@@ -1,4 +1,4 @@
-body, html{
+/* body, html{
 	background-color: #FFF;	
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -6,31 +6,31 @@ body, html{
 	margin: 0;	
 	padding: 0;
 	user-select: none;
+} */
+article {
+  box-sizing: border-box;
+  color: #333;
+  font-size: 110%;
+  margin: 20px auto 0 auto;
+  text-align: justify;
+  width: 1080px;
 }
-article{
-    box-sizing: border-box;
-    color: #333;
-    font-size: 110%;
-    margin: 20px auto 0 auto;
-    text-align: justify;
-    width: 1080px;
-}
-header{
-    align-items: center;
-    background-color: #000;
-    display: flex;
-    justify-content: flex-end;
-    height: 70px;
-    left: 0;
-    padding: 0 20px 0 20px;
-    position: sticky;
-    right: 0;
-    top: 0;
+header {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: flex-end;
+  height: 70px;
+  left: 0;
+  padding: 0 20px 0 20px;
+  position: sticky;
+  right: 0;
+  top: 0;
 }
 @media all and (max-width: 1140px) {
-    article{
-        margin: 20px 0 0 0;
-        padding: 0 20px 0 20px;
-        width: 100%;
-    }
+  article {
+    margin: 20px 0 0 0;
+    padding: 0 20px 0 20px;
+    width: 100%;
+  }
 }
