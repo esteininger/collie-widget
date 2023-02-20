@@ -96,7 +96,7 @@
 #colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx {
   box-shadow: 0 0 0 1px #656a7633;
   height: 52px;
-  padding: 12px 20px 0 20px;
+  padding: 10px 20px 10px 20px;
 }
 #colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div:first-child {
   align-items: center;
@@ -112,9 +112,16 @@
   font-size: 0.8125rem;
   padding: 0 8px 0 8px;
 }
+/* collie ai logo */
 #colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div > a {
   color: inherit;
   float: right;
+}
+/* hide collie ai logo on mobile */
+@media (max-width: 820px) {
+  #colwid_modal > .wrap_pfx > .content_pfx > .bottom_pfx > div > a {
+    display: none;
+  }
 }
 
 #colwid_modal
