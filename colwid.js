@@ -291,8 +291,8 @@ class CollieWidget {
       this.toggling = true;
       let modal = document.getElementById("colwid_modal");
 
-      document.body.style.marginRight = this.on ? "0px" : "15px";
-      document.body.style.overflow = this.on ? "auto" : "hidden";
+      // document.body.style.marginRight = this.on ? "0px" : "15px";
+      // document.body.style.overflow = this.on ? "auto" : "hidden";
 
       if (!this.on) {
         modal.style.display = "block";
