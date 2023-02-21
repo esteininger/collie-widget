@@ -5,6 +5,7 @@ const CONFIG = {
   category_default: null,
   category_send_as: "category=%category%",
   search_min_length: 1,
+  // layoutHTML: "layout.html",
   layoutHTML: "https://dbkcgeg8vo92c.cloudfront.net/layout.html",
 };
 
@@ -196,6 +197,7 @@ class CollieWidget {
           let html = "";
           if (data.length) {
             data.forEach((result) => {
+              console.log(result);
               if (
                 result.context &&
                 Array.isArray(result.context) &&
@@ -213,6 +215,11 @@ class CollieWidget {
                       resultText += `<span class="hit">${text.value}</span>`;
                     }
                   });
+                  // importance
+                  resultRow = resultRow.replace(
+                    "%importance%",
+                    result.importance
+                  );
 
                   // replace href
                   if (this.hasNestedKey(result, "url")) {

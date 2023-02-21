@@ -307,6 +307,15 @@
   background-color: #fef1de;
   padding: 0.05rem 0.4rem 0.2rem;
 }
+
+#colwid_modal
+  > .wrap_pfx
+  > .content_pfx
+  > .middle_pfx
+  > .result_row
+  #importance {
+  font-size: 80%;
+}
 #colwid_modal > .wrap_pfx > .content_pfx > .top_pfx {
   align-items: center;
   border-bottom: 1px solid #656a7633;
