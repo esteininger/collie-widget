@@ -197,69 +197,70 @@ class CollieWidget {
           let html = "";
           if (data.length) {
             data.forEach((result) => {
-              console.log(result);
               if (
                 result.context &&
                 Array.isArray(result.context) &&
                 result.context.length &&
                 result.filename
               ) {
+                let resultRow = this.searchResultRowHTML;
+
                 // highlighting
-                let resultRow = this.searchResultRowHTML,
-                  resultText = "";
-                result.context.forEach((context) => {
-                  context.texts.forEach((text) => {
-                    if (text.type == "text") {
-                      resultText += text.value;
-                    } else if (text.type == "hit") {
-                      resultText += `<span class="hit">${text.value}</span>`;
-                    }
-                  });
-                  // importance
+                // let resultText = "";
+                // result.context.forEach((context) => {
+                // context.texts.forEach((text) => {
+                //   if (text.type == "text") {
+                //     resultText += text.value;
+                //   } else if (text.type == "hit") {
+                //     resultText += `<span class="hit">${text.value}</span>`;
+                //   }
+                // });
+
+                // importance
+                resultRow = resultRow.replace(
+                  "%importance%",
+                  result.importance
+                );
+
+                // replace href
+                if (this.hasNestedKey(result, "url")) {
                   resultRow = resultRow.replace(
-                    "%importance%",
-                    result.importance
+                    "%file_url%",
+                    result.metadata.properties.url
                   );
+                } else {
+                  resultRow = resultRow.replace("%file_url%", "#");
+                }
 
-                  // replace href
-                  if (this.hasNestedKey(result, "url")) {
-                    resultRow = resultRow.replace(
-                      "%file_url%",
-                      result.metadata.properties.url
-                    );
-                  } else {
-                    resultRow = resultRow.replace("%file_url%", "#");
-                  }
+                // handle preview
+                if (this.hasNestedKey(result, "preview_img")) {
+                  resultRow = resultRow.replaceAll(
+                    "%file_extension%",
+                    `<img style="width:100%" src="${result.metadata.properties.preview_img}">`
+                  );
+                } else {
+                  resultRow = resultRow.replace(
+                    "%file_extension%",
+                    result.filename.split(".").pop()
+                  );
+                }
 
-                  // handle preview
-                  if (this.hasNestedKey(result, "preview_img")) {
-                    resultRow = resultRow.replaceAll(
-                      "%file_extension%",
-                      `<img style="width:100%" src="${result.metadata.properties.preview_img}">`
-                    );
-                  } else {
-                    resultRow = resultRow.replace(
-                      "%file_extension%",
-                      result.filename.split(".").pop()
-                    );
-                  }
+                // handle title
+                if (this.hasNestedKey(result, "title")) {
+                  resultRow = resultRow.replaceAll(
+                    "%file%",
+                    result.metadata.properties.title
+                  );
+                } else {
+                  resultRow = resultRow.replaceAll(
+                    "%file%",
+                    result.filename.trim()
+                  );
+                }
 
-                  // handle title
-                  if (this.hasNestedKey(result, "title")) {
-                    resultRow = resultRow.replaceAll(
-                      "%file%",
-                      result.metadata.properties.title
-                    );
-                  } else {
-                    resultRow = resultRow.replaceAll(
-                      "%file%",
-                      result.filename.trim()
-                    );
-                  }
-
-                  resultRow = resultRow.replace("%text%", resultText.trim());
-                  html += resultRow;
-                });
+                // resultRow = resultRow.replace("%text%", resultText.trim());
+                html += resultRow;
+                // });
               }
             });
             let searchedSto = window.localStorage.getItem("searched"),
