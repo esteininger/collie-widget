@@ -158,14 +158,14 @@ class CollieWidget {
       this.searchBack();
     } else if (this.searchTerm.length >= this.config.search_min_length) {
       this.searchController = new AbortController();
-      let url = `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true`;
+      let url = `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true`;
 
       if (this.category) {
         url += "&" + this.category_send_as.replace("%category%", this.category);
       }
 
       fetch(
-        `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true`,
+        `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true`,
         {
           signal: this.searchController.signal,
           headers: {
@@ -187,6 +187,7 @@ class CollieWidget {
                 result.context.length &&
                 result.filename
               ) {
+                // highlighting
                 let resultRow = this.searchResultRowHTML,
                   resultText = "";
                 result.context.forEach((context) => {
@@ -197,14 +198,40 @@ class CollieWidget {
                       resultText += `<span class="hit">${text.value}</span>`;
                     }
                   });
-                  resultRow = resultRow.replace(
-                    "%file_entension%",
-                    result.filename.split(".").pop()
-                  );
-                  resultRow = resultRow.replaceAll(
-                    "%file%",
-                    result.filename.trim()
-                  );
+                  // replace href
+                  if (result.metadata.properties.url) {
+                    resultRow = resultRow.replace(
+                      "%file_url%",
+                      result.metadata.properties.url
+                    );
+                  }
+
+                  // handle preview
+                  if (result.metadata.properties.preview_img) {
+                    resultRow = resultRow.replaceAll(
+                      "%file_extension%",
+                      `<img style="width:100%" src="${result.metadata.properties.preview_img}">`
+                    );
+                  } else {
+                    resultRow = resultRow.replace(
+                      "%file_extension%",
+                      result.filename.split(".").pop()
+                    );
+                  }
+
+                  // handle title
+                  if (result.metadata.properties.title) {
+                    resultRow = resultRow.replaceAll(
+                      "%file%",
+                      result.metadata.properties.title
+                    );
+                  } else {
+                    resultRow = resultRow.replaceAll(
+                      "%file%",
+                      result.filename.trim()
+                    );
+                  }
+
                   resultRow = resultRow.replace("%text%", resultText.trim());
                   html += resultRow;
                 });

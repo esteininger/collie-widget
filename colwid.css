@@ -177,8 +177,8 @@
 }
 #colwid_modal > .wrap_pfx > .content_pfx > .middle_pfx > a span:first-child {
   color: #3b3d45;
-  height: 16px;
-  width: 16px;
+  /* height: 16px;
+  width: 16px; */
 }
 #colwid_modal > .wrap_pfx > .content_pfx > .middle_pfx > a span:last-child {
   color: #3b3d45;
