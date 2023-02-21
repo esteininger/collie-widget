@@ -204,6 +204,8 @@ class CollieWidget {
                       "%file_url%",
                       result.metadata.properties.url
                     );
+                  } else {
+                    resultRow = resultRow.replace("%file_url%", "#");
                   }
 
                   // handle preview
