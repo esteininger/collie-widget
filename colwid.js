@@ -173,14 +173,14 @@ class CollieWidget {
       this.searchBack();
     } else if (this.searchTerm.length >= this.config.search_min_length) {
       this.searchController = new AbortController();
-      let url = `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true`;
+      let url = `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true&limit=10`;
 
       if (this.category) {
         url += "&" + this.category_send_as.replace("%category%", this.category);
       }
 
       fetch(
-        `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true`,
+        `https://api.mixpeek.com/v1/search?q=${this.searchTerm}&context=true&metadata=true&limit=10`,
         {
           signal: this.searchController.signal,
           headers: {
