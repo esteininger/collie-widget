@@ -121,6 +121,21 @@ class CollieWidget {
     return textArea.innerHTML;
   }
 
+  hasNestedKey(obj, key) {
+    if (obj === null || typeof obj !== "object") {
+      return false;
+    }
+    if (key in obj) {
+      return true;
+    }
+    for (const nestedKey in obj) {
+      if (this.hasNestedKey(obj[nestedKey], key)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   mainSet() {
     let html = "",
       searchedSto = window.localStorage.getItem("searched");
@@ -198,8 +213,9 @@ class CollieWidget {
                       resultText += `<span class="hit">${text.value}</span>`;
                     }
                   });
+
                   // replace href
-                  if (result.metadata.properties.url) {
+                  if (this.hasNestedKey(result, "url")) {
                     resultRow = resultRow.replace(
                       "%file_url%",
                       result.metadata.properties.url
@@ -209,7 +225,7 @@ class CollieWidget {
                   }
 
                   // handle preview
-                  if (result.metadata.properties.preview_img) {
+                  if (this.hasNestedKey(result, "preview_img")) {
                     resultRow = resultRow.replaceAll(
                       "%file_extension%",
                       `<img style="width:100%" src="${result.metadata.properties.preview_img}">`
@@ -222,7 +238,7 @@ class CollieWidget {
                   }
 
                   // handle title
-                  if (result.metadata.properties.title) {
+                  if (this.hasNestedKey(result, "title")) {
                     resultRow = resultRow.replaceAll(
                       "%file%",
                       result.metadata.properties.title
