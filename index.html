@@ -221,9 +221,16 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    new CollieWidget(
-      "Much3A6xrsFTC2Oaf2wuLY314S-lE8eJlB0vFujCaa2kA89ALOpvzUOyFptNy03WPHM",
-      "colwid"
-    );
+    new CollieWidget({
+      api_key:
+        "Much3A6xrsFTC2Oaf2wuLY314S-lE8eJlB0vFujCaa2kA89ALOpvzUOyFptNy03WPHM",
+      div_id: "colwid",
+      suggested_pages: [
+        {
+          title: "Homepage",
+          url: "https://collie.ai",
+        },
+      ],
+    });
   });
 </script>

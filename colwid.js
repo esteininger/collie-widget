@@ -22,10 +22,12 @@ class CollieWidget {
   suggested = null;
   toggling = false;
 
-  constructor(mixpeek_auth, div_id) {
-    this.button_src = document.getElementById(div_id);
+  constructor({ api_key, div_id, suggested_pages }) {
     this.config = CONFIG;
-    this.config.mixpeek_auth = mixpeek_auth;
+    // constructor vars
+    this.button_src = document.getElementById(div_id);
+    this.config.mixpeek_auth = api_key;
+    this.suggested_pages = suggested_pages;
 
     if (!this.button_src) {
       console.log("Could not find the div to bind");
@@ -155,8 +157,17 @@ class CollieWidget {
       html += "<p>Recent Searches</p>" + searchedHTML;
     }
 
-    if (this.suggested) {
-      html += "<p>Suggested Pages</p>" + this.suggested;
+    // populate suggested items
+    if (this.suggested_pages) {
+      // header
+      html += "<p>Suggested Pages</p>";
+      this.suggested_pages.forEach((page) => {
+        // replace each title
+        html += this.suggested
+          .replaceAll("%suggested_title%", this.htmlEncode(page.title))
+          .replaceAll("%suggested_url%", this.htmlEncode(page.url));
+        //TODO: replace each icon
+      });
     }
 
     document.getElementById("colwid_content").innerHTML = html;
