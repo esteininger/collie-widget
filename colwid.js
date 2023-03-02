@@ -22,12 +22,13 @@ class CollieWidget {
   suggested = null;
   toggling = false;
 
-  constructor({ api_key, div_id, suggested_pages }) {
+  constructor({ api_key, div_id, suggested_pages, context }) {
     this.config = CONFIG;
     // constructor vars
     this.button_src = document.getElementById(div_id);
     this.config.mixpeek_auth = api_key;
     this.suggested_pages = suggested_pages;
+    this.context = context;
 
     if (!this.button_src) {
       console.log("Could not find the div to bind");
@@ -217,16 +218,19 @@ class CollieWidget {
                 let resultRow = this.searchResultRowHTML;
 
                 // highlighting
-                // let resultText = "";
-                // result.context.forEach((context) => {
-                // context.texts.forEach((text) => {
-                //   if (text.type == "text") {
-                //     resultText += text.value;
-                //   } else if (text.type == "hit") {
-                //     resultText += `<span class="hit">${text.value}</span>`;
-                //   }
-                // });
-
+                // if (this.context) {
+                //   let resultText = "";
+                //   result.context.forEach((context) => {
+                //     context.texts.forEach((text) => {
+                //       if (text.type == "text") {
+                //         resultText += text.value;
+                //       } else if (text.type == "hit") {
+                //         resultText += `<span class="hit">${text.value}</span>`;
+                //       }
+                //     });
+                //   });
+                //   resultRow = resultRow.replace("%text%", resultText.trim());
+                // }
                 // importance
                 resultRow = resultRow.replace(
                   "%importance%",
@@ -269,9 +273,7 @@ class CollieWidget {
                   );
                 }
 
-                // resultRow = resultRow.replace("%text%", resultText.trim());
                 html += resultRow;
-                // });
               }
             });
             let searchedSto = window.localStorage.getItem("searched"),
@@ -362,7 +364,7 @@ class CollieWidget {
         modal.style.display = "block";
         this.categorySet();
         this.mainSet();
-        document.getElementById("colwid_input").focus();
+        // document.getElementById("colwid_input").focus();
       }
 
       document.body.offsetHeight;
