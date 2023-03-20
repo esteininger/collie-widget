@@ -222,6 +222,9 @@ class CollieWidget {
                   // Define the maximum length of the result text
                   const maxLength = 100;
 
+                  // An array to store unique hit values
+                  const hitValues = [];
+
                   // Create an empty string to hold the resulting text
                   let resultText = "";
 
@@ -244,8 +247,11 @@ class CollieWidget {
                           return;
                         }
                       } else if (text.type == "hit") {
-                        // If the text type is "hit", add a span with the hit class to resultText
-                        resultText += `<span class="hit">${text.value}</span>`;
+                        // If the hit value is not already in the hitValues array, add it to the resultText and hitValues array
+                        if (!hitValues.includes(text.value)) {
+                          resultText += `<span class="hit">${text.value}</span>`;
+                          hitValues.push(text.value);
+                        }
                       }
                     });
                     if (totalLength >= maxLength) {
