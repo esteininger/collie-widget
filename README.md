@@ -58,5 +58,9 @@ new CollieWidget({
 });
 ```
 
-[Live Demo](http://learn.mixpeek.com/)
+[Live Demo](http://collie.ai/tesla)
+
+![Alt Text](assets/demo.gif)
+
+
 
