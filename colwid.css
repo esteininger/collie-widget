@@ -180,7 +180,12 @@
   /* height: 16px;
   width: 16px; */
 }
-#colwid_modal > .wrap_pfx > .content_pfx > .middle_pfx > a span:last-child {
+#colwid_modal
+  > .wrap_pfx
+  > .content_pfx
+  > .middle_pfx
+  > a
+  span:last-child:not(.hit) {
   color: #3b3d45;
   font-size: 0.875rem;
   font-weight: 500;
