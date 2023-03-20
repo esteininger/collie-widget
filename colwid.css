@@ -488,3 +488,11 @@
     text-align: left;
   }
 }
+
+/*  */
+
+.result_row div:nth-child(2) div:last-child {
+  /* Select the last div in the second div container */
+  margin-top: 7px;
+  font-size: 14px;
+}

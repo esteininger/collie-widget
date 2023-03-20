@@ -218,19 +218,59 @@ class CollieWidget {
                 let resultRow = this.searchResultRowHTML;
 
                 // highlighting
-                // if (this.context) {
-                //   let resultText = "";
-                //   result.context.forEach((context) => {
-                //     context.texts.forEach((text) => {
-                //       if (text.type == "text") {
-                //         resultText += text.value;
-                //       } else if (text.type == "hit") {
-                //         resultText += `<span class="hit">${text.value}</span>`;
-                //       }
-                //     });
-                //   });
-                //   resultRow = resultRow.replace("%text%", resultText.trim());
-                // }
+                if (this.context) {
+                  // Define the maximum length of the result text
+                  const maxLength = 100;
+
+                  // Create an empty string to hold the resulting text
+                  let resultText = "";
+
+                  // Initialize a counter for the total length of the text
+                  let totalLength = 0;
+
+                  // Loop through each context and text object
+                  result.context.forEach((context) => {
+                    context.texts.forEach((text) => {
+                      if (text.type == "text") {
+                        // If the text type is "text", trim the length to fit within the maxLength limit
+                        const trimmedText = text.value.substring(
+                          0,
+                          maxLength - totalLength
+                        );
+                        resultText += trimmedText;
+                        totalLength += trimmedText.length;
+                        if (totalLength >= maxLength) {
+                          // If the total length is greater than or equal to the maxLength limit, exit the loop
+                          return;
+                        }
+                      } else if (text.type == "hit") {
+                        // If the text type is "hit", add a span with the hit class to resultText
+                        resultText += `<span class="hit">${text.value}</span>`;
+                      }
+                    });
+                    if (totalLength >= maxLength) {
+                      // If the total length is greater than or equal to the maxLength limit, exit the loop
+                      return;
+                    }
+                  });
+                  if (totalLength > maxLength) {
+                    // If the total length is still greater than the maxLength limit, truncate the resultText
+                    resultText = resultText.substring(0, maxLength) + "...";
+                  }
+
+                  // replace %text% with the highlighted result text
+                  resultRow = resultRow.replace("%text%", resultText.trim());
+                } else {
+                  // if there's no context, delete the section
+                  resultRow = resultRow.replace(/<div>%text%<\/div>/, "");
+                }
+
+                // replace %importance% with the result importance
+                resultRow = resultRow.replace(
+                  "%importance%",
+                  result.importance
+                );
+
                 // importance
                 resultRow = resultRow.replace(
                   "%importance%",
