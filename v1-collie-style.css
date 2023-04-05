@@ -502,7 +502,7 @@
 > .middle_pfx
 > .result_row .title {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 
   #colwid_modal
@@ -510,6 +510,6 @@
 > .content_pfx
 > .middle_pfx
 > .result_row .contents {
-    font-size: 1rem;
-    padding-top:0.75rem;
+    font-size: 0.8rem;
+    padding-top: 0.2rem;
   }
