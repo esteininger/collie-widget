@@ -20,18 +20,18 @@ To use CollieWidget, follow these steps:
 
 ```html
 // self host
-<script src="colwid.js"></script>
+<script src="v1-collie-widget.js"></script>
 // or use the CDN 
-<script src="https://dbkcgeg8vo92c.cloudfront.net/colwid.js">
+<script src="https://dbkcgeg8vo92c.cloudfront.net/v1-collie-widget.js">
 ```
 
 2. Include the CollieWidget JavaScript and CSS files in your HTML file:
 
 ```html
 // self host
-<script src="colwid.css"></script>
+<script src="v1-collie-style.css"></script>
 // or use the CDN 
-<link href="https://dbkcgeg8vo92c.cloudfront.net/colwid.css">
+<link href="https://dbkcgeg8vo92c.cloudfront.net/v1-collie-style.css">
 ```
 
 3. Create an HTML element with a unique ID where the CollieWidget will be bound:
