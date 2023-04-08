@@ -254,19 +254,18 @@ class CollieWidget {
                             }
 
                             // handle preview
-                            console.log()
-                            if (result.metadata.preview_img.length > 0) {
+                            if (result.metadata.hasOwnProperty('preview_img') && result.metadata.preview_img.length > 0) {
                                 resultRow = resultRow.replaceAll(
                                     "%file_extension%",
                                     `<img style="width:100%" src="${result.metadata.preview_img}">`
                                 );
-                            }
-                            else {
+                            } else {
                                 resultRow = resultRow.replace(
                                     "%file_extension%",
                                     `<img style="width:100%" src="https://dbkcgeg8vo92c.cloudfront.net/placeholder.png">`
                                 );
                             }
+
 
 
                             // handle title
